@@ -27,12 +27,31 @@ from sklearn.metrics import roc_curve
 
 class functionals:
     
-    
-    
     # instance attributes
-    def __init__(self, path):
+    def __init__(self, path, indir, outdir):
         self.path = path
         self.fig_id = fig_id
+        self.orig_headers = [
+    'CREDIT SCORE', 'FIRST PAYMENT DATE', 'FIRST TIME HOMEBUYER FLAG', 'MATURITY DATE',
+    'MSA', 'MI %', 'NUMBER OF UNITS', 'OCCUPANCY STATUS', 'ORIGINAL CLTV',
+    'ORIGINAL DTI', 'ORIGINAL UPB', 'ORIGINAL LTV', 'ORIGINAL INTEREST RATE',
+    'CHANNEL', 'PPM FLAG', 'PRODUCT TYPE', 'PROPERTY STATE', 'PROPERTY TYPE', 
+    'POSTAL CODE', 'LOAN SEQUENCE NUMBER', 'LOAN PURPOSE', 'ORIGINAL LOAN TERM',
+    'NUMBER OF BORROWERS', 'SELLER NAME', 'SERVICER NAME', 'UNKNOWN'
+]
+    self.mp_headers = [
+    'LOAN SEQUENCE NUMBER', 'MONTHLY REPORTING PERIOD', 'CURRENT ACTUAL UPB',
+    'CURRENT LOAN DELINQUENCY STATUS', 'LOAN AGE', 'REMAINING MONTHS TO LEGAL MATURITY',
+    'REPURCHASE FLAG', 'MODIFICATION FLAG', 'ZERO BALANCE CODE',
+    'ZERO BALANCE EFFECTIVE DATE', 'CURRENT INTEREST RATE', 'CURRENT DEFERRED UPB', 
+    'DDLPI', 'MI RECOVERIES', 'NET SALES PROCEEDS', 'NON MI RECOVERIES', 'EXPENSES', 
+    'LEGAL COSTS', 'MAINTENANCE AND PRESERVATION COSTS', 'TAXES AND INSURANCE', 
+    'MISCELLANEOUS EXPENSES', 'ACTUAL LOSS CALCULATION', 'MODIFICATION COST',
+    'STEP MODIFICATION FLAG', 'DEFERRED PAYMENT MODIFICATION', 'ELTV', 'ZERO BALANCE REMOVAL UPB',
+    'DELINQUENT ACCRUED INTEREST'
+]
+    self.indir = indir
+    self.outdir = outdir
         
         
     # save figure
@@ -53,14 +72,14 @@ class functionals:
                     result.write(line)
 
     # concatenate monthly performance data
-    def mp_concatter(self, indir, outdir):
-        filelist = glob.glob(indir)
-        dflist = []
+    def mp_concatter(self, self.indir, self.outdir):
+        self.filelist = glob.glob(self.indir)
+        self.dflist = []
         for file in filelist:
             print(file)
-            data = pd.read_csv(file, delimiter='|', names=mp_headers, low_memory=False)
-            data = data[cols_p]
-            data.dropna(inplace=True)
-            dflist.append(data)
-        concatdf = pd.concat(dflist, axis=0)
-        concatdf.to_csv(outdir, index=False)
+            self.data = pd.read_csv(file, delimiter='|', names=self.mp_headers, low_memory=False)
+            self.data = self.data[self.cols_p]
+            self.data.dropna(inplace=True)
+            self.dflist.append(self.data)
+        self.concatdf = pd.concat(dflist, axis=0)
+        self.concatdf.to_csv(self.outdir, index=False)
