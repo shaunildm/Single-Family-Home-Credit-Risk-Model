@@ -83,3 +83,13 @@ class functionals:
             self.dflist.append(self.data)
         self.concatdf = pd.concat(dflist, axis=0)
         self.concatdf.to_csv(self.outdir, index=False)
+        
+        
+    def data_cleaner(self, self.mp, self.orig):
+        self.data = self.mp.set_index('LOAN SEQUENCE NUMBER').join(self.orig.set_index('LOAN SEQUENCE NUMBER'))
+        self.data.dropna(inplace=True)
+        self.data_test = self.data[(self.data['CREDIT SCORE'] >= 301) & (self.data['CREDIT SCORE'] <= 850)]
+        self.data_test = self.data[(self.data['ORIGINAL CLTV'] >= 0) & (self.data['ORIGINAL CLTV'] <= 200)]
+        self.data_test = self.data[(self.data['ORIGINAL DTI'] >= 0) & (self.data['ORIGINAL DTI'] <= 65)]
+        self.data_test['MI %'].replace(999, 0, inplace=True)
+        self.data_test['ZERO BALANCE CODE'].replace({1: 0, 9: 1, 6: 1, 3: 1, 2: 1, 15: 1}, inplace=True)
