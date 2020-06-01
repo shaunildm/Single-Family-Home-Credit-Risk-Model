@@ -14,10 +14,6 @@ As part of a larger effort to increase transparency, Freddie Mac have made loan-
 The dataset covers approximately 27.8 million fixed-rate mortgages (including HARP loans) originated between January 1, 1999 and December 31, 2018. Monthly loan performance data, including credit performance information up to and including property disposition, is being disclosed through June 30, 2019. Specific credit performance information in the dataset includes voluntary prepayments and loans that were Foreclosure Alternatives and REOs. Specific actual loss data in the dataset includes net sales proceeds, MI recoveries, non-MI recoveries, expenses, current deferred UPB, and due date of last paid installment.
 
 
-### Data Description
-
-
-
 ## Exporatory Data Analysis
 
 
