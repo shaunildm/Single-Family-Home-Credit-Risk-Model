@@ -95,3 +95,7 @@ class functionals:
         self.data['MI %'].replace(999, 0, inplace=True)
         self.data['ZERO BALANCE CODE'].replace({1: 0, 9: 1, 6: 1, 3: 1, 2: 1, 15: 1}, inplace=True)
         return self.data
+    
+    
+    def unzipper(self):
+        pass
