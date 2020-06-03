@@ -99,3 +99,6 @@ class functionals:
     
     def unzipper(self):
         pass
+    
+    def downloader(self):
+        pass
