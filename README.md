@@ -6,9 +6,10 @@ By Shaunil Maharaj
 
 ## Introduction
 
-As part of a larger effort to increase transparency, Freddie Mac have made loan-level credit performance data on fully amortized fixed-rate mortgages that either company purchased or guaranteed from 1999 to 2018, available to all in an effort to boost transparency. This effort will allow investors to build accurate performance models in support of risk sharring initiatives by the Federal Housing Finance Agency(FIFA). 
+As part of a larger effort to increase transparency, Freddie Mac have made loan-level credit performance data on fully amortized fixed-rate mortgages that either company purchased or guaranteed from 1999 to 2018, available to all in an effort to boost transparency. This effort will allow investors to build accurate performance models in support of risk sharring initiatives by the Federal Housing Finance Agency(FIFA).
 
-With this data we will create a credit risk model that can predict loan defaults within 2 years. We will want to focus on creating a model with the highest overall area under the curve (AOC) score, which will give us a metric on how our models are performing.
+
+With another housing recession possibly imminent due to shelter-in-place orders and massive protest countryside at the time of this writing. divide this data we will create a credit risk model that can predict loan defaults within 2 years. We will want to focus on creating a model with the highest overall area under the curve (AOC) score, which will give us a metric on how our models are performing.
 
 
 ### Data
@@ -23,9 +24,6 @@ have been collected following disposal of the property. In addition, certain dat
 new terms, if applicable, as a result of a modification. 
 
 
-
-
-
 ## Exporatory Data Analysis
 
 The data will come in two data sets. The loan origination dataset and the monthly performance dataset. Due the large size of the data, it is best to have all of the data seletion, concatenation, cleaning, and splitting done in a python executable file. 
@@ -36,16 +34,38 @@ Other columns will look more closely at will is the 'zero balance code' column w
 ![imabalance](images/imbalance.png)
 
 
-
-
 Let's take a look at our distributions. First we will look at the credit score distribution of defaulted loans:
 ![distcr](images/distcr.png)
 
 
+We can see that the credit score is evenly distributed meaning that borrowers with around 700-750 credit score were the main group of borrowers that defaulted which is expected as they are the largest group amongst borrowers.
+
+
+The Combined loan to value ratio considers the amount borrowed to the value of the home.
 
 
 ![distcltv](images/distcltv.png)
+
+
+We are seeing a negative skew, indicated that borrowers with larger loan to value ratio's tended to default on there loan more than other groups. This could be an oversight of issuers, or a tell of a deeper problem with loan issuance.
+
+
+Let's check to see the distribution of interest rates among defaulted borrowers:
+
+
+![distir](images/distir.png)
+
+
+No skew, which makes sense as the credit score would be the main driver of the interest rate for most borrowers.
+
+
+Finally we can see the debt to income ratio of defaulted borrowers:
+
+
 ![distdti](images/distdti.png)
+
+
+As we can see, we have another negative skew, signifying the trend that those with lower income ratios and higher debt or more likely to default. This is concerning considering our distribution of credit scores and interest rates of defaulted borrowers are normal. 
 
 
 ### Insights
