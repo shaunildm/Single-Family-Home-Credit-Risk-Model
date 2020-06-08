@@ -32,8 +32,8 @@ new terms, if applicable, as a result of a modification.
 
 
 # Results
-
-
+PREVIOUS
+![aoc_test](images/AOC_test.png)
 
 # Conclusion
 
