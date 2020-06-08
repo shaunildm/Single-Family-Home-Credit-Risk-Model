@@ -21,7 +21,10 @@ have been collected following disposal of the property. In addition, certain dat
 new terms, if applicable, as a result of a modification. 
 
 ## Exporatory Data Analysis
-
+![imabalance](images/imbalance.png)
+![distcr](images/distcr.png)
+![distcltv](images/distcltv.png)
+![distdti](images/distdti.png)
 
 
 ### Insights
