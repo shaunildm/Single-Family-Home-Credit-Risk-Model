@@ -68,13 +68,14 @@ Finally we can see the debt to income ratio of defaulted borrowers:
 As we can see, we have another negative skew, signifying the trend that those with lower income ratios and higher debt or more likely to default. This is concerning considering our distribution of credit scores and interest rates of defaulted borrowers are normal. 
 
 
-### Insights
-
-
-
 # Results
-PREVIOUS
-![aoc_test](images/AOC_test.png)
+
+
+
+
+## Neural Networks
+
+
 
 # Conclusion
 
