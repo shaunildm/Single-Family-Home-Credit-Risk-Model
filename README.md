@@ -91,7 +91,7 @@ Using a clustered sampled approach gave less than ideal results.
 
 We can try to improve our model by extracting all of the defaulted from previous years to balance our dependent variable:
 
-![under](images/imbalance_under.png)
+![under](images/imbalance_all_under.png)
 
 Unfortunately many of the sampling techniques failed to improve our model very much.
 
